@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Domain Name Generator Tool - Generate unique domain names easily. Mobile-friendly and SEO optimized.">
+    <meta name="keywords" content="Domain Name Generator, Free Domain Tool, SEO Tools, Domain Ideas, Mobile Friendly Tool">
+    <meta name="author" content="Your Website Name">
+    <title>Free Domain Name Generator - Mobile & SEO Friendly</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f1f1f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Domain Name Generator</h1>
+        <p>Generate creative and unique domain names instantly!</p>
+        <input type="text" id="keyword" placeholder="Enter a keyword (e.g., tech, shop)">
+        <button onclick="generateDomains()">Generate Domains</button>
+
+        <h2>Suggested Domains:</h2>
+        <ul id="domainList"></ul>
+
+        <div class="footer">
+            © 2025 Your Website Name. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        function generateDomains() {
+            const keyword = document.getElementById('keyword').value.trim();
+            const domainList = document.getElementById('domainList');
+            domainList.innerHTML = '';
+
+            if (!keyword) {
+                alert('Please enter a keyword to generate domains.');
+                return;
+            }
+
+            // Domain suffixes
+            const suffixes = ['.com', '.net', '.org', '.io', '.tech', '.store', '.online', '.info'];
+
+            // Generate domain suggestions
+            suffixes.forEach(suffix => {
+                const domain = keyword.toLowerCase().replace(/\s+/g, '') + suffix;
+                const listItem = document.createElement('li');
+                listItem.textContent = domain;
+                domainList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
